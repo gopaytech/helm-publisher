@@ -7,6 +7,9 @@ git clone https://github.com/${CHART_REPOSITORY} helm-charts
 git clone https://github.com/${PACKAGE_REPOSITORY} helm-packages
 
 cd /helm-publisher/helm-charts/${CHART_DIRECTORY}
+if [ ${COMMIT_ID} ] ; then
+    git checkout ${COMMIT_ID}
+fi
 helm package .
 mv ./*.tgz /helm-publisher/helm-packages/
 
