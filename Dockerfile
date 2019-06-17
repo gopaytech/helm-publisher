@@ -6,3 +6,9 @@ RUN curl -Lo /tmp/helm-linux-amd64.tar.gz https://storage.googleapis.com/kuberne
     && tar -xvf /tmp/helm-linux-amd64.tar.gz -C /tmp/ \
     && chmod +x /tmp/linux-amd64/helm \
     && mv /tmp/linux-amd64/helm /usr/local/bin/
+
+WORKDIR /helm-publisher
+
+COPY entrypoint.sh ./entrypoint.sh
+
+ENTRYPOINT [ "./entrypoint.sh" ]
