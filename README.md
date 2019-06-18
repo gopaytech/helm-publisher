@@ -17,7 +17,7 @@ Docker images that automate process of publishing Helm chart. It will pull your 
 ```
 2. Type this command
 ```bash
-  docker run walbertusd/helm-publisher --env-file=.env
+  docker run gatesso/helm-publisher --env-file=.env
 ```
 
 ## Configuration
