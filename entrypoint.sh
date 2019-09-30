@@ -10,6 +10,8 @@ cd /helm-publisher/helm-charts/${CHART_DIRECTORY}
 if [ ${COMMIT_ID} ] ; then
     git checkout ${COMMIT_ID}
 fi
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm dependency build
 helm package .
 mv ./*.tgz /helm-publisher/helm-packages/
 
