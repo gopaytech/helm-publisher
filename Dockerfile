@@ -1,4 +1,4 @@
-FROM alpine/helm:2.14.0
+FROM alpine/helm:3.0.0
 
 RUN apk add git
 WORKDIR /helm-publisher
