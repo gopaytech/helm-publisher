@@ -12,6 +12,7 @@ if [ ${COMMIT_ID} ]; then
 fi
 
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
+rm -rvf ./*.lock
 helm dependency build
 helm package .
 mv ./*.tgz /helm-publisher/helm-packages/
